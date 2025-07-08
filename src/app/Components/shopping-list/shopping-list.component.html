@@ -1,9 +1,12 @@
-<div class="row">
-    <div class="col-xs-10">
-        <app-shopping-edit></app-shopping-edit>
-        <hr>
-        <ul class="list-group">
-            <a class="list-group-item" style="cursor: pointer;"></a>
-        </ul>
-    </div>
-</div>
+<ul class="list-group" *ngIf="ingredients.length > 0; else noIngredients">
+  <li 
+    class="list-group-item"
+    style="cursor: pointer;"
+    *ngFor="let ingredient of ingredients">
+    {{ ingredient.name }} ({{ ingredient.amount }})
+  </li>
+</ul>
+
+<ng-template #noIngredients>
+  <p style="color: gray;">No ingredients found</p>
+</ng-template>
