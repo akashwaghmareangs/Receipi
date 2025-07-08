@@ -5,15 +5,15 @@ import { Ingredient } from '../../shared/ingredient.model';
   selector: 'app-shopping-list',
   standalone: false,
   templateUrl: './shopping-list.component.html',
-  styleUrl: './shopping-list.component.css'
+  styleUrls: ['./shopping-list.component.css'] // Corrected
 })
 export class ShoppingListComponent implements OnInit {
-  ingredients: Ingredient[] = [];
-  constructor(){
+  ingredients: Ingredient[] = [
+    new Ingredient('Apples', 5),
+    new Ingredient('Tomatoes', 10),
+  ];
 
-  }
-  ngOnInit(): void {
-  
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }
